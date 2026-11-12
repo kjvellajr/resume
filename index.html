@@ -1,10 +1,211 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta name='robots' content='noindex,nofollow' />
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta charset="utf-8">
+<title>Kenneth J. Vella Jr. — Resume</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<style>
+  @page { size: letter; margin: 0.4in 0.5in; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Times New Roman", "Liberation Serif", Tinos, serif;
+    font-size: 10.25pt;
+    line-height: 1.2;
+    color: #000;
+  }
+  header { text-align: center; margin-bottom: 6pt; }
+  header h1 { font-size: 18pt; margin: 0 0 2pt; letter-spacing: 0.5pt; }
+  .contact { display: flex; justify-content: space-between; font-size: 10pt; }
+  .contact div:first-child { text-align: left; }
+  .contact div:last-child { text-align: right; }
+  a { color: inherit; text-decoration: none; }
+  h2 {
+    font-size: 11pt; text-align: center; text-transform: uppercase; letter-spacing: 1pt;
+    margin: 9pt 0 4pt; padding-bottom: 2pt; border-bottom: 0.75pt solid #000;
+  }
+  p { margin: 0 0 4pt; }
+  ul { margin: 2pt 0 0; padding-left: 16pt; }
+  li { margin: 0 0 1pt; }
+  .job { margin-bottom: 6pt; }
+  .job > .row, .job > .loc, .job > .role { break-after: avoid; }
+  li { break-inside: avoid; }
+  .row { display: flex; justify-content: space-between; gap: 12pt; }
+  .company { font-weight: bold; }
+  .role { font-style: italic; }
+  .loc { font-size: 10pt; }
+  .skills { display: grid; grid-template-columns: max-content 1fr; gap: 1pt 10pt; }
+  .skills dt { font-weight: bold; }
+  .skills dd { margin: 0; }
+  .download { display: none; }
+
+  /* On screen: show the resume as a page on a gray backdrop. Print/PDF is unaffected. */
+  @media screen {
+    html { background: #e8e8e8; }
+    body { max-width: 8.5in; margin: 24px auto; padding: 0.5in 0.55in; background: #fff;
+           box-shadow: 0 1px 6px rgba(0,0,0,.2); }
+    a:hover { text-decoration: underline; }
+    .download { display: block; text-align: right; font-family: system-ui, sans-serif;
+                font-size: 10pt; margin: -0.3in 0 0.1in; }
+    .download a { color: #1a5fb4; }
+  }
+  @media screen and (max-width: 700px) {
+    body { margin: 0; padding: 16px; box-shadow: none; font-size: 11pt; }
+    .download { margin: 0 0 8px; }
+    .contact, .row { flex-wrap: wrap; }
+    .row > span:last-child { color: #444; }
+    .skills { grid-template-columns: 1fr; }
+    .skills dd { margin-bottom: 4pt; }
+  }
+</style>
 </head>
 <body>
-  <iframe id="pdfviewer" src="https://docs.google.com/gview?embedded=true&url=https://kjvellajr.github.io/resume/resume.pdf&amp;embedded=true" frameborder="0" style="min-height:100vh;width:100%"></iframe>
+
+<div class="download"><a href="resume.pdf">Download PDF</a></div>
+
+<header>
+  <h1>Kenneth J. Vella Jr.</h1>
+  <div class="contact">
+    <div><a href="https://github.com/kjvellajr">github.com/kjvellajr</a><br><a href="https://www.linkedin.com/in/kjvellajr">linkedin.com/in/kjvellajr</a></div>
+    <div>734.716.3206<br><a href="mailto:kjvellajr@gmail.com">kjvellajr@gmail.com</a></div>
+  </div>
+</header>
+
+<h2>Summary</h2>
+<p>Platform engineer working with Kubernetes since 2016, currently Lead Architect at The Wendy’s Company.
+Building internal developer platforms, Kubernetes Operators, and delivery pipelines across GCP and AWS while mentoring
+engineers and setting shared technical direction. Background in application development, infrastructure provisioning,
+operations scaling, maintainability, and security.</p>
+<ul>
+  <li>Lead platform teams: set priorities, mentor engineers, and align technical direction across teams</li>
+  <li>Design and implement deployment and operations for cloud native applications on Kubernetes</li>
+  <li>Migrate and refactor on-premises application stacks to the cloud for cost savings and scalability</li>
+  <li>Implement Zero Trust for applications, workflows, and users to improve security posture</li>
+  <li>Drive culture change through metrics, monitoring, and alerting to improve speed to market</li>
+  <li>Enterprise application developer with a focus on JVM technologies integrated with a mainframe backend</li>
+</ul>
+
+<h2>Skills</h2>
+<dl class="skills">
+  <dt>Cloud</dt><dd>GCP, AWS, OCI</dd>
+  <dt>Kubernetes</dt><dd>GKE, EKS, OpenShift, kubeadm, etcd, Helm, Helmfile, ArgoCD, Argo Workflows, Kubebuilder, Controller Runtime, cert-manager, external-secrets, Longhorn, Harbor, kured, Reloader, Reflector, Node Feature Discovery, Headlamp, k8s-image-swapper</dd>
+  <dt>Languages</dt><dd>Go, Bash, Python, Kotlin, Java, JavaScript, SQL</dd>
+  <dt>Infrastructure</dt><dd>Terraform, Ansible, GitLab, Jenkins, Docker, HashiCorp Vault, Apache&nbsp;Kafka&nbsp;(Strimzi), NFS, Fedora CoreOS, Butane/Ignition, CRI-O, Podman, Renovate, Taskfile</dd>
+  <dt>Networking &amp; Security</dt><dd>SSO&nbsp;(Keycloak,&nbsp;OAuth2&nbsp;Proxy), CNI&nbsp;(Calico), Ingress&nbsp;(Traefik,&nbsp;Envoy,&nbsp;Kong,&nbsp;Nginx), Load&nbsp;Balancing&nbsp;(MetalLB), DNS&nbsp;(CoreDNS,&nbsp;NodeLocal&nbsp;DNSCache,&nbsp;Technitium,&nbsp;external-dns), VPN&nbsp;(WireGuard), Firewall&nbsp;(pfSense), Policy&nbsp;(OPA&nbsp;Gatekeeper,&nbsp;Kyverno)</dd>
+  <dt>Observability</dt><dd>OpenTelemetry, Grafana, Metrics&nbsp;(Prometheus,&nbsp;Mimir), Logs&nbsp;(Loki,&nbsp;FluentD,&nbsp;Splunk), Tracing&nbsp;(Tempo,&nbsp;Jaeger), Datadog, Grafana Alerting, Blackbox Exporter, Pushgateway</dd>
+  <dt>Data &amp; Storage</dt><dd>PostgreSQL&nbsp;(CloudNativePG), SQLite, MariaDB, Neo4j, Elasticsearch, MSSQL, DB2, H2, Redis&nbsp;(Valkey), MQTT&nbsp;(VerneMQ), S3&nbsp;(MinIO)</dd>
+  <dt>Development</dt><dd>Spring, Micronaut, Hibernate, Tomcat, Node.js, React, Next.js, Angular, Gradle, Maven</dd>
+  <dt>Testing</dt><dd>Testkube, K6, Ginkgo, JUnit, Mockito, Selenium</dd>
+</dl>
+
+<h2>Work Experience</h2>
+
+<div class="job">
+  <div class="row"><span class="company">The Wendy’s Company</span><span>February 2022 to Present</span></div>
+  <div class="loc">Dublin, Ohio (Remote)</div>
+  <div class="row"><span class="role">Lead Architect, Digital</span><span>May 2025 to Present</span></div>
+  <ul>
+    <li>Set architecture direction for Wendy’s Digital across cloud infrastructure, delivery pipelines, and Kubernetes runtime</li>
+    <li>Partner with product and engineering teams to design scalable, secure cloud native solutions on GCP</li>
+    <li>Define standards and reference architectures for application delivery, networking, and identity</li>
+  </ul>
+  <div class="row"><span class="role">Lead Engineer, Platform</span><span>December 2024 to May 2025</span></div>
+  <ul>
+    <li>Led the platform engineering team delivering CI/CD pipelines, GKE clusters, and developer experience tooling</li>
+    <li>Set priorities and roadmap for the platform team</li>
+    <li>Facilitate Tech Radar exercises across teams to align direction on tools, platforms, and languages</li>
+    <li>Mentor engineers on technical and career goals</li>
+  </ul>
+  <div class="row"><span class="role">Cloud Systems Engineer, Contractor via Galileo Insights</span><span>February 2022 to December 2024</span></div>
+  <ul>
+    <li>Develop Helm charts and Kubernetes Operators to enhance developer experience</li>
+    <li>Administer GitLab and automate runner provisioning on GKE via Terraform</li>
+    <li>Establish developer SDLC with a focus on speed to market</li>
+    <li>Manage GCP IAM by implementing RBAC and Workload Identity</li>
+    <li>Design and build self-managed workflows for Docker and Terraform on Kubernetes</li>
+    <li>Architect private cloud networking between applications, databases, and cloud services</li>
+    <li>Promote and implement Chaos Engineering across all environments</li>
+    <li>Run cloud native applications in production on ephemeral (100% spot instance) infrastructure</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="row"><span class="company">Galileo Insights</span><span>February 2022 to December 2024</span></div>
+  <div class="loc">Royal Oak, Michigan (Remote)</div>
+  <div class="role">Principal Platform Engineer</div>
+  <ul>
+    <li>Set direction for company product implementation in GCP</li>
+    <li>Design and build GCP runtime platform and delivery pipeline</li>
+    <li>Convert ClickOps management of Auth0 configuration to GitOps via Terraform</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="row"><span class="company">Quavo, Inc.</span><span>February 2019 to December 2024</span></div>
+  <div class="loc">Wilmington, Delaware (Remote)</div>
+  <div class="role">Cloud Systems Engineer, Consultant (Contract)</div>
+  <ul>
+    <li>Design and guide infrastructure team transition from VM-based deployments to Kubernetes</li>
+    <li>Introduce Terraform for infrastructure within the AWS environment</li>
+    <li>Provision and administer firewall / VPN solution for developer network on AWS</li>
+    <li>Automate VPN client distribution for workstations via Microsoft Intune</li>
+    <li>Implement SSO for AWS resources with an identity provider (Azure AD)</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="row"><span class="company">ArborMetrix, Inc.</span><span>April 2020 to February 2022</span></div>
+  <div class="loc">Ann Arbor, Michigan (Remote)</div>
+  <div class="role">Infrastructure Architect, Senior DevOps Engineer</div>
+  <ul>
+    <li>Run Kafka (Strimzi) on Kubernetes with client authorization (Keycloak)</li>
+    <li>Build Kubernetes Operators to automate RBAC for team self-service</li>
+    <li>Create application platform with service mesh (LinkerD) and distributed tracing (Jaeger)</li>
+    <li>Configure shared OAuth2 Proxy middleware for client authentication / authorization via Traefik</li>
+    <li>Build monitoring stack for logs (ELK) and metrics (Prometheus), visualized in Grafana</li>
+    <li>Administer HashiCorp Vault including secret engines, authentication, audit logs, and backups</li>
+    <li>Manage DNS hosted zones and TLS certificates for applications</li>
+    <li>Maintain multiple EKS environments in Terraform on spot instances, including IRSA and version upgrades</li>
+    <li>Establish company SDLC and a Git-first approach to infrastructure configuration</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="row"><span class="company">Auto-Owners Insurance Company</span><span>December 2009 to April 2020</span></div>
+  <div class="loc">Delta Township, Michigan</div>
+  <div class="role">Senior Software Developer</div>
+  <ul>
+    <li>Design, develop, load test, and maintain a customer-facing J2EE proposal application</li>
+    <li>Break apart monolithic applications on VMs into microservices running on OpenShift v3</li>
+    <li>Convert batch ETL processes into real-time streaming ETL with integrated telemetry</li>
+    <li>Design and implement software delivery pipelines using CI/CD principles</li>
+    <li>Create, manage, and version internal APIs consumed across lines of business</li>
+    <li>Create educational tools and mentor peers to grow their technical careers</li>
+  </ul>
+</div>
+
+<h2>Projects</h2>
+
+<div class="job">
+  <div class="row"><span class="company">Homelab Platform</span><span>2016 to Present</span></div>
+  <ul>
+    <li>Run a 9-node bare-metal kubeadm cluster on Fedora CoreOS, CRI-O, and Calico; GitOps (ArgoCD) for 86 Helm charts</li>
+    <li>Write Go controllers (~11k lines): CloudNativePG pre-drain switchover, ArgoCD sync controller, cluster health dashboard</li>
+    <li>Gate node reboots (kured) on workload health; automate etcd snapshots and control-plane certificate expiry alerts</li>
+    <li>Self-host metrics, logs, and traces (Mimir, Loki, Tempo) via OpenTelemetry, plus an outage dead-man switch</li>
+    <li>Run routing (pfSense, since 2009) with MetalLB BGP peering, DNS over DoH (Technitium), and VPN (WireGuard) via a VPS</li>
+    <li>Localize packet loss hop by hop with Smokeping and MTR; NetAlertX device discovery from pfSense DHCP leases</li>
+    <li>Host SSO (Keycloak, OAuth2 Proxy), secrets (External Secrets), PostgreSQL (CloudNativePG), Kafka (Strimzi), S3 (MinIO)</li>
+  </ul>
+</div>
+
+<h2>Education, Certifications &amp; Conferences</h2>
+<div class="row"><span><span class="company">Michigan Technological University</span> · B.S. in Computer Science · Upsilon Pi Epsilon (ΥΠΕ) Honor Society</span><span>2005 to 2009</span></div>
+<div class="row"><span>Oracle Certified Associate, Java SE 7 Programmer</span><span>December 2015</span></div>
+<div class="row"><span>KubeCon + CloudNativeCon North America</span><span>Annually, 2022 to 2026</span></div>
+<div class="row"><span>UberConf (2018) · Central Ohio Software Symposium (2012, 2017) · ArchConf (2015)</span><span></span></div>
+
 </body>
 </html>
